@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        body {
+            height: 90vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .form-container {
+            border: 1px solid #ccc;
+            width: fit-content;
+            padding: 40px;
+        }
+
+        .form-group {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        input {
+            padding: 10px;
+        }
+
+        label {
+            width: 100px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="form-container">
+        <form action="/login" method="post">
+            <div class="form-group">
+                <label for="username">Email:</label>
+                <input type="text" id="username" name="username" required>
+            </div>
+            <br><br>
+
+            <div class="form-group">
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+            <Br><br>
+            <div class="form-group">
+                <button type="submit">Login</button>
+            </div>
+        </form>
+    </div>
+
+</body>
+
+</html>

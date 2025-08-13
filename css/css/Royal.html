@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</head>
+<style>
+    *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.slider{
+    position: relative;
+    top: -100px;
+    margin-bottom: -100px;
+}
+.navbar2{
+    height: 100px;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.443);
+    padding-left: 30px;
+    padding-top: 10px;
+    position: sticky;
+    top: -20px;
+    z-index: 1;
+}
+.link{
+    float: right;
+   margin-top: -55px;
+   margin-right: 20px;
+   
+}
+.link a{
+    color: white;
+    padding: 15px;
+    font-size: 20px;
+    font-family: arial;
+    text-decoration: none;
+}
+.link a:hover{
+    color: orangered;
+    transition: 0.5s;
+}
+.fa-house{
+    color: orangered;
+    font-size: 30px;
+}
+.slider button{
+    /* height: 50px; */
+    position: absolute;
+    top: 100px;
+}
+.but button{
+    height: 40px;
+    width: 480px;
+    background-color: orangered;
+    color: white;
+    border: none;
+    margin: 30px;
+    
+}
+.but{
+    
+    padding-left: 80px;
+}
+.youtube{
+    height: 430px;
+    width: 100%;
+    background-color: #F0F0F0;
+    padding: 50px;
+}
+.youtube iframe{
+    padding: 10px;
+}
+.poster{
+  height: 850px;
+  width: 100%;
+  padding-top: 50px;
+  padding-left: 50px;
+}
+.poster img{
+  height: 750px;
+  width: 550px;
+  margin: 10px;
+
+  box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.153) , 10px -10px 20px rgba(0, 0, 0, 0.153) , -10px 10px 20px rgba(0, 0, 0, 0.153) , -10px -10px 20px rgba(0, 0, 0, 0.153); 
+}
+.welcome{
+  height: 630px;
+  width: 100%;
+  background-color: #F0F0F0;
+  display: flex;
+  justify-content: center;
+  padding-top: 50px;
+  gap: 30px;
+}
+.para{
+  width: 45%;
+}
+.image{
+  width: 45%;
+}
+.list{
+  border-left: 1px solid orangered;
+}
+.list p{
+  padding: 12px;
+  font-size: 20px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.082);
+}
+.fa-rotate-90{
+  color: orangered;
+  font-size: 30px;
+  margin-left: -18px;
+}
+.job{
+  margin-top: 30px;
+  margin-left: 50px;
+  border-right: 1px solid rgba(0, 0, 0, 0.13);
+  width: 100px;
+  height: 120px;
+}
+.campus{
+  margin-left: 230px;
+  margin-top: -110px;
+  border-right: 1px solid rgba(0, 0, 0, 0.13);
+  width: 110px;
+  height: 120px;
+
+}
+.interview{
+  margin-left: 400px;
+  margin-top: -120px;
+}
+.orange{
+  height: 500px;
+  width: 100%;
+  background-color: rgba(255, 68, 0, 0.904);
+  padding-top: 50px;
+}
+.wrap{
+  height: 500px;
+  width: 100%;
+  background-image: url('https://plus.unsplash.com/premium_photo-1661964095477-fe68b487f700?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8YnVpbGRpbmclMjBpbiUyMGJhY2tncm91bmR8ZW58MHx8MHx8fDA%3D');
+  background-size: cover;
+}
+.orange h1{
+  text-align: center;
+  font-size: 46px;
+  color: white;
+}
+.suborange{
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  padding-top: 30px;
+}
+.suborange p{
+  width: 45%;
+  text-align: justify;
+  font-size: 19px;
+  color: white;
+}
+.team{
+  height: 600px;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.817);
+  padding-top: 60px;
+}
+.wrap2{
+  height: 600px;
+  width: 100%;
+  background-image: url('https://images.pexels.com/photos/667838/pexels-photo-667838.jpeg?cs=srgb&dl=pexels-kamo11235-667838.jpg&fm=jpg');
+  background-size: cover;
+}
+.team h1{
+  text-align: center;
+  color: white;
+  font-size: 46px;
+}
+.team_image{
+  width: 200px;
+  margin: auto;
+  padding-top: 50px;
+}
+.team_para{
+  width: 80%;
+  margin: auto;
+  text-align: center;
+  padding-top: 40px;
+  color: white;
+  font-size: 22px;
+}
+    
+</style>
+<body>
+    
+    <div class="main">
+        <div class="navbar2">
+            <div class="logo">
+                <img src="https://royaltechnosoft.com/wp-content/uploads/2018/11/logo_white-1.png" alt="">
+            </div>
+            <div class="link">
+                <a href=""><i class="fa-solid fa-house"></i></a>
+                <a href="">About us</a>
+                <a href="">Our Service</a>
+                <a href="">Contact</a>
+                <a href=""><i class="fa-solid fa-phone"></i>+91 763289742</a>
+            </div>
+        </div>
+        <!-- navbar ending -->
+         <div class="slider">
+            <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                  <div class="carousel-item active" data-bs-interval="2000">
+                    <img src="https://royaltechnosoft.com/wp-content/uploads/2018/11/hallticketbgnew.png" class="d-block w-100" alt="...">
+                  </div>
+                  <div class="carousel-item" data-bs-interval="2000">
+                    <img src="https://royaltechnosoft.com/wp-content/uploads/2018/11/slider2.jpg" class="d-block w-100" alt="...">
+                  </div>
+                  <div class="carousel-item" data-bs-interval="2000">
+                    <img src="https://royaltechnosoft.com/wp-content/uploads/2018/11/slider_image3.jpg" class="d-block w-100" alt="...">
+                  </div>
+                  <div class="carousel-item" data-bs-interval="2000">
+                    <img src="https://royaltechnosoft.com/wp-content/uploads/2018/11/slider_image4.jpg" class="d-block w-100" alt="...">
+                  </div>
+                  <div class="carousel-item" data-bs-interval="2000">
+                    <img src="https://royaltechnosoft.com/wp-content/uploads/2018/11/slider_image5.jpg" class="d-block w-100" alt="...">
+                  </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="prev">
+                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="next">
+                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Next</span>
+                </button>
+              </div>
+         </div>
+         <!-- slider ending -->
+          <div class="but">
+            <button>Register Here For Free Online seminar on What after 10th/12th</button>
+            <button>Register Here For Free Online Bootcamp</button>
+          </div>
+          <!-- button ending -->
+
+          <div class="youtube">
+            <iframe width="577" height="347" src="https://www.youtube.com/embed/j1_hkYd_31o" title="Profile || Dhiraj Poojara (Gujarati) || Royal Technosoft" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            <iframe width="577" height="347" src="https://www.youtube.com/embed/wtSwXvaQwNY" title="Dhiraj Poojara" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+          </div>
+          <!-- youtube endign -->
+
+          <div class="poster">
+            <img src="https://royaltechnosoft.com/wp-content/uploads/2021/07/NamraShah_page-0001.jpg" alt="">
+            <img src="https://royaltechnosoft.com/wp-content/uploads/2021/04/IMG-20210412-WA0004.jpg" alt="">
+          </div>
+          <!-- poster ending -->
+
+          <div class="welcome">
+            <div class="para">
+              <h2>Welcome To Royal Technosoft</h2>
+              <p>Add to your IT skills with short term and Professional courses from Royal Technosoft with Live Projects in Basic and Advance technologies.</p>
+
+              <div class="list">
+                <p><i class="fa-solid fa-caret-up fa-rotate-90"></i>Get Training in Java,Oracle,Python And Other Technology</p>
+                <p><i class="fa-solid fa-caret-up fa-rotate-90"></i>Get Placement</p>
+                <p><i class="fa-solid fa-caret-up fa-rotate-90"></i>Live Project Training</p>
+                <p><i class="fa-solid fa-caret-up fa-rotate-90"></i>Soft skill development</p>
+                <p><i class="fa-solid fa-caret-up fa-rotate-90"></i>Certification  in Java,Oracle,Python And Other Technology</p>
+                <p><i class="fa-solid fa-caret-up fa-rotate-90"></i>Advanced Programs</p>
+              </div>
+            </div>
+            <div class="image">
+              <img src="https://royaltechnosoft.com/wp-content/uploads/2018/11/dhirajpoojara.png" alt="">
+
+              <div class="job">
+                <img src="https://royaltechnosoft.com/wp-content/uploads/2018/11/jobfair-1.png" alt="">
+                <p>Job Fair</p>
+              </div>
+              <div class="campus">
+                <img src="https://royaltechnosoft.com/wp-content/uploads/2018/11/campuss.png" alt="">
+                <p>Campus <br> Interviews</p>
+              </div>
+              <div class="interview">
+                <img src="https://royaltechnosoft.com/wp-content/uploads/2018/11/pertinalize_interview.png" alt="">
+                <p>Personalized <br> Interviews</p>
+              </div>
+            </div>
+          </div>
+          <!-- welcome ending -->
+
+          <div class="wrap">
+          <div class="orange">
+            <h1>Why Royal Technosoft?</h1>
+            <div class="suborange">
+              <img src="https://royaltechnosoft.com/wp-content/uploads/2018/11/accounting_img.jpg" height="300px" alt="">
+              <p>Royal Technosoft Pvt. Ltd. provides Global Software Solutions and their affiliated undertakings.  In India’s Ahmedabad, we have a software development team. Both the Gandhinagar branch and Surat where we are currently conducting business. Furthermore, our experts completed a number of government projects for India. Our goal is to comprehend the business goals of our clients and be seen as one of their most organizational aspects. Our primary goal is to create solutions to clients that are quick, simple, and low-effort. Process to ensure prompt response without compromising quality is something we always do.</p>
+            </div>
+          </div>
+        </div>
+        <!-- orange ending -->
+
+        <div class="wrap2">
+        <div class="team">
+          <h1>Meet The Team</h1>
+          <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+              <div class="carousel-item active" data-bs-interval="2000">
+                <div  class="team_image">
+                  <img src="https://royaltechnosoft.com/wp-content/uploads/2018/11/team1.png" height="200" width="200" class="d-block w-100" alt="...">
+                </div>
+                <div class="team_para">
+                  <p>She is an expert with 5+ years of expertise in developing Android and Flutter applications and Trainer, including designing, developing, testing, and managing mobile applications.</p>
+                  <h2>Arati Kyada</h2>
+                </div>
+              </div>
+              <div class="carousel-item" data-bs-interval="2000">
+                <div class="team_image">
+                  <img src="https://royaltechnosoft.com/wp-content/uploads/2018/11/team2.png" class="d-block w-100" alt="...">
+                </div>
+              </div>
+              <div class="carousel-item" data-bs-interval="2000">
+                <div class="team_image">
+                  <img src="https://royaltechnosoft.com/wp-content/uploads/2022/08/Alakh-Pandya.png" class="d-block w-100" alt="...">
+                </div>
+              </div>
+              <div class="carousel-item" data-bs-interval="2000">
+                <div class="team_image">
+                  <img src="https://royaltechnosoft.com/wp-content/uploads/2022/08/Rahul-Kirpekar.jpg" class="d-block w-100" alt="...">
+                </div>
+              </div>
+              <div class="carousel-item" data-bs-interval="2000">
+                <div class="team_image">
+                  <img src="https://royaltechnosoft.com/wp-content/uploads/2022/08/Samir-Vithlani.jpg" class="d-block w-100" alt="...">
+                </div>
+              </div>
+              <div class="carousel-item" data-bs-interval="2000">
+                <div class="team_image">
+                  <img src="https://royaltechnosoft.com/wp-content/uploads/2022/08/Krishna-Shah.jpeg" class="d-block w-100" alt="...">
+                </div>
+              </div>
+              <div class="carousel-item" data-bs-interval="2000">
+                <div class="team_image">
+                  <img src="https://royaltechnosoft.com/wp-content/uploads/2022/08/Madhusudan-Soneji.jpeg" class="d-block w-100" alt="...">
+                </div>
+              </div>
+              <div class="carousel-item" data-bs-interval="2000">
+                <div class="team_image">
+                  <img src="https://royaltechnosoft.com/wp-content/uploads/2022/08/Kamal-Soneji.jpeg" class="d-block w-100" alt="...">
+                </div>
+              </div>
+            </div>
+           
+          </div>
+        </div>
+      </div>
+    </div>
+</body>
+</html>

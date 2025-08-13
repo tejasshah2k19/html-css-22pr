@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HTML List Examples (UL & OL)</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 30px;
+        }
+
+        h2 {
+            margin-top: 40px;
+            color: #2c3e50;
+        }
+
+        ul,
+        ol {
+            margin-bottom: 20px;
+        }
+
+        /* Custom bullets */
+        .custom-bullets ul {
+            list-style-type: square;
+        }
+
+        .custom-image ul {
+            list-style-image: url('star.png');
+
+        }
+
+        .custom-image ul li {
+            margin-bottom: 10px;
+        }
+
+        /* Remove bullets (horizontal menu) */
+        .horizontal-menu ul {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            gap: 20px;
+        }
+
+        .horizontal-menu li {
+            background-color: #3498db;
+            color: white;
+            padding: 10px 15px;
+            border-radius: 5px;
+        }
+
+        /* Advanced: CSS Counters */
+        .css-counter ol {
+            counter-reset: custom-counter;
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .css-counter li {
+            counter-increment: custom-counter;
+            margin-bottom: 10px;
+        }
+
+        .css-counter li::before {
+            content: "Step " counter(custom-counter) ": ";
+            font-weight: bold;
+            color: #e67e22;
+        }
+
+        /* Inline list with links */
+        .inline-links ul {
+            list-style: none;
+            display: flex;
+            gap: 15px;
+            padding: 0;
+        }
+
+        .inline-links a {
+            text-decoration: none;
+            color: #27ae60;
+        }
+
+        /* Nested lists with different bullets */
+        .nested-lists ul ul {
+            list-style-type: circle;
+        }
+
+        .nested-lists ul ul ul {
+            list-style-type: square;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>HTML Lists: UL & OL Examples</h1>
+
+    <h2>🔹 Basic Unordered List (UL)</h2>
+    <ul>
+        <li>Apple</li>
+        <li>Banana</li>
+        <li>Mango</li>
+    </ul>
+
+    <h2>🔹 Basic Ordered List (OL)</h2>
+    <ol>
+        <li>Login</li>
+        <li>Select Product</li>
+        <li>Checkout</li>
+    </ol>
+
+    <h2>🔹 Nested Lists</h2>
+    <div class="nested-lists">
+        <ul>
+            <li>Fruits
+                <ul>
+                    <li>Citrus
+                        <ul>
+                            <li>Orange</li>
+                            <li>Lemon</li>
+                        </ul>
+                    </li>
+                    <li>Berry</li>
+                </ul>
+            </li>
+            <li>Vegetables</li>
+        </ul>
+    </div>
+
+    <h2>🔹 Custom Bullets (Square)</h2>
+    <div class="custom-bullets">
+        <ul>
+            <li>HTML</li>
+            <li>CSS</li>
+            <li>JavaScript</li>
+        </ul>
+    </div>
+
+    <h2>🔹 List with Custom Bullet Image</h2>
+    <div class="custom-image">
+        <ul>
+            <li>Item One 1 </li>
+            <li>Item Two 2 </li>
+            <li>Item Three 3 </li>
+        </ul>
+    </div>
+
+    <h2>🔹 Horizontal Menu using UL</h2>
+    <div class="horizontal-menu">
+        <ul>
+            <li>Home</li>
+            <li>About</li>
+            <li>Services</li>
+            <li>Contact</li>
+        </ul>
+    </div>
+
+    <h2>🔹 Ordered List with Roman Numbers</h2>
+    <ol type="I">
+        <li>Introduction</li>
+        <li>Chapter 1</li>
+        <li>Conclusion</li>
+    </ol>
+
+    <h2>🔹 Ordered List Starting at 5</h2>
+    <ol start="5">
+        <li>Item A</li>
+        <li>Item B</li>
+    </ol>
+
+    <h2>🔹 Advanced OL with CSS Counter</h2>
+    <div class="css-counter">
+        <ol>
+            <li>Register</li>
+            <li>Verify Email</li>
+            <li>Complete Profile</li>
+            <li>Start Learning</li>
+        </ol>
+    </div>
+
+    <h2>🔹 Inline List with Hyperlinks</h2>
+    <div class="inline-links">
+        <ul>
+            <li><a href="#">Facebook</a></li>
+            <li><a href="#">Twitter</a></li>
+            <li><a href="#">Instagram</a></li>
+        </ul>
+    </div>
+
+</body>
+
+</html>

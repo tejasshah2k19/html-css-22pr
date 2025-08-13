@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .login-box {
+            width: 300px;
+            border: 1px solid ghostwhite;
+            padding: 20px 40px;
+            background-color: aliceblue;
+        }
+
+        body {
+
+            margin: 0;
+            background-color: bisque;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .login-box h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        input[type="text"],
+        input[type="password"]{
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 15px;
+            border: 1px solid #aaa;
+        }
+
+        input[type="submit"]{
+            width: 100%;
+            padding: 8px;
+            background-color: rgb(86, 86, 237);
+            border: none;
+            color: white;
+        }
+        .footer{
+            text-align: center;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="login-box">
+        <h2>Login</h2>
+        <form action="login" method="post">
+            <label for="username">Username</label>
+            <input type="text" id="username" name="username" required />
+
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" required />
+
+            <input type="submit" value="Login" />
+        </form>
+        <div class="footer">
+            New user? <a href="#">Register</a>
+        </div>
+    </div>
+</body>
+
+</html>

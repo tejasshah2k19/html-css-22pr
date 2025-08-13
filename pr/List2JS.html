@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Collapsible Nested UL Example</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+      max-width: 800px;
+      margin: auto;
+    }
+
+    h1 {
+      color: #2c3e50;
+      margin-bottom: 30px;
+    }
+
+    ul {
+      list-style: none;
+      padding-left: 20px;
+    }
+
+    .collapsible > span {
+      cursor: pointer;
+      user-select: none;
+      display: inline-block;
+      margin-bottom: 5px;
+    }
+
+    .collapsible > span::before {
+      content: "▶ ";
+      display: inline-block;
+      transition: transform 0.2s ease;
+    }
+
+    .collapsible.open > span::before {
+      transform: rotate(90deg);
+    }
+
+    .nested {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease-out;
+    }
+
+    .collapsible.open .nested {
+      max-height: 500px; /* enough space for inner items */
+      transition: max-height 0.5s ease-in;
+    }
+
+    @media (max-width: 600px) {
+      body {
+        padding: 10px;
+      }
+
+      .collapsible > span {
+        font-size: 18px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <h1>📁 Collapsible Nested List</h1>
+
+  <ul>
+    <li class="collapsible">
+      <span>Fruits</span>
+      <ul class="nested">
+        <li>Apple</li>
+        <li>Banana</li>
+        <li class="collapsible">
+          <span>Citrus</span>
+          <ul class="nested">
+            <li>Orange</li>
+            <li>Lemon</li>
+            <li>Grapefruit</li>
+          </ul>
+        </li>
+        <li>Grapes</li>
+      </ul>
+    </li>
+
+    <li class="collapsible">
+      <span>Vegetables</span>
+      <ul class="nested">
+        <li>Tomato</li>
+        <li>Carrot</li>
+        <li>Spinach</li>
+      </ul>
+    </li>
+  </ul>
+
+  <script>
+    document.querySelectorAll('.collapsible > span').forEach(span => {
+      span.addEventListener('click', () => {
+        const parentLi = span.parentElement;
+        parentLi.classList.toggle('open');
+      });
+    });
+  </script>
+
+</body>
+</html>

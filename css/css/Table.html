@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        body {
+            background-color: #f0f0f0;
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+        }
+
+        table {
+            height: 400px;
+            width: 600px;
+            text-align: center;
+            margin-top: 50px;
+            border-collapse: collapse;
+        }
+
+        th {
+            padding: 10px;
+            border-bottom: 2px solid #ddd;
+        }
+
+        .box {
+            background-color: white;
+            width: 600px;
+            box-shadow: 1px 1px 10px #aaa;
+            padding: 10px;
+        }
+
+        td {
+            border-top: 1px solid #ddd;
+        }
+
+        tr:hover {
+            background-color: #dddd;
+        }
+
+        .active {
+            background-color: #6ec871;
+            border-radius: 5px;
+            padding: 3px 10px;
+            color: white;
+        }
+
+        .suspend {
+            background-color: rgb(228, 101, 101);
+            border-radius: 5px;
+            padding: 3px 10px;
+            color: white;
+        }
+
+        .hold {
+            background-color: orange;
+            border-radius: 5px;
+            padding: 3px 10px;
+            color: white;
+        }
+        .icon-green{
+            color: green;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <table>
+            <thead>
+                <tr>
+                    <th>TeamName</th>
+                    <th>Location</th>
+                    <th>Rank</th>
+                    <th>Symbol</th>
+                    <th>Team Status</th>
+                    <th>Team Score</th>
+                </tr>
+            </thead>
+            <tr>
+                <td>Team A</td>
+                <td>New York</td>
+                <td>1</td>
+                <td>A</td>
+                <td><label class="active">Active</label></td>
+                <td><i class="fa-solid fa-earth-americas icon-green"></i></td>
+            </tr>
+
+            <tr>
+                <td>Team B</td>
+                <td>Los Angeles</td>
+                <td>2</td>
+                <td>B</td>
+                <td><label class="suspend">Suspend</label></td>
+                <td></td>
+
+            </tr>
+
+            <tr>
+                <td>Team C</td>
+                <td>Chicago</td>
+                <td>3</td>
+                <td>C</td>
+                <td><label class="hold">Hold</label></td>
+                <td></td>
+
+            </tr>
+            <tr>
+                <td>Team D</td>
+                <td>Houston</td>
+                <td>4</td>
+                <td>D</td>
+                <td><label class="active">Active</label></td>
+                <td></td>
+
+            </tr>
+            <tr>
+                <td>Team E</td>
+                <td>Phoenix</td>
+                <td>5</td>
+                <td>E</td>
+                <td><label class="hold">Hold</label></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>Team F</td>
+                <td>Philadelphia</td>
+                <td>6</td>
+                <td>F</td>
+                <td><label class="suspend">Suspend</label></td>
+                <td></td>
+            </tr>
+        </table>
+    </div>
+</body>
+
+</html>

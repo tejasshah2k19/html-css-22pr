@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Input Type Range Example</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 30px;
+    }
+
+    section {
+      margin-bottom: 40px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: bold;
+    }
+
+    input[type="range"] {
+      width: 300px;
+    }
+
+    .vertical-slider {
+      writing-mode: bt-lr;
+      appearance: slider-vertical;
+      height: 200px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>&lt;input type="range"&gt; Examples</h1>
+
+  <!-- Basic Range Input -->
+  <section>
+    <label for="basicRange">Basic Range (0 - 100):</label>
+    <input type="range" id="basicRange" min="0" max="100" />
+  </section>
+
+  <!-- Range with step, value, tick marks -->
+  <section>
+    <label for="volume">Volume (with step, tick marks):</label>
+    <input
+      type="range"
+      id="volume"
+      name="volume"
+      min="0"
+      max="100"
+      step="10"
+      value="50"
+      list="tickmarks"
+    />
+    <datalist id="tickmarks">
+      <option value="0"></option>
+      <option value="10"></option>
+      <option value="20"></option>
+      <option value="30"></option>
+      <option value="40"></option>
+      <option value="50"></option>
+      <option value="60"></option>
+      <option value="70"></option>
+      <option value="80"></option>
+      <option value="90"></option>
+      <option value="100"></option>
+    </datalist>
+  </section>
+
+  <!-- Range with live output -->
+  <section>
+    <label for="brightness">Brightness (live output):</label>
+    <input
+      type="range"
+      id="brightness"
+      min="0"
+      max="255"
+      value="128"
+      oninput="brightnessOutput.value = brightness.value"
+    />
+    <output id="brightnessOutput">128</output>
+  </section>
+
+  <!-- Disabled Range -->
+  <section>
+    <label for="disabledRange">Disabled Range:</label>
+    <input type="range" id="disabledRange" min="0" max="10" value="5" disabled />
+  </section>
+
+  <!-- Vertical Slider -->
+  <section>
+    <label for="verticalSlider">Vertical Slider:</label><br>
+    <input
+      type="range"
+      id="verticalSlider"
+      min="0"
+      max="100"
+      value="50"
+      class="vertical-slider"
+    />
+  </section>
+
+</body>
+</html>

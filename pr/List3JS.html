@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Interactive Accordion List</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+      max-width: 800px;
+      margin: auto;
+    }
+
+    h1 {
+      color: #2c3e50;
+      margin-bottom: 30px;
+    }
+
+    ul {
+      list-style: none;
+      padding-left: 20px;
+    }
+
+    .collapsible > span {
+      cursor: pointer;
+      user-select: none;
+      display: inline-block;
+      margin-bottom: 5px;
+    }
+
+    .collapsible > span::before {
+      content: "▶ ";
+      display: inline-block;
+      transition: transform 0.2s ease;
+    }
+
+    .collapsible.open > span::before {
+      transform: rotate(90deg);
+    }
+
+    .nested {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease-out;
+    }
+
+    .collapsible.open .nested {
+      max-height: 500px;
+      transition: max-height 0.5s ease-in;
+    }
+
+    @media (max-width: 600px) {
+      .collapsible > span {
+        font-size: 18px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <h1>📁 Accordion-Style Collapsible List</h1>
+
+  <ul>
+    <li class="collapsible" data-id="fruits">
+      <span>Fruits</span>
+      <ul class="nested">
+        <li>Apple</li>
+        <li>Banana</li>
+        <li class="collapsible" data-id="citrus">
+          <span>Citrus</span>
+          <ul class="nested">
+            <li>Orange</li>
+            <li>Lemon</li>
+          </ul>
+        </li>
+        <li>Grapes</li>
+      </ul>
+    </li>
+
+    <li class="collapsible" data-id="vegetables">
+      <span>Vegetables</span>
+      <ul class="nested">
+        <li>Tomato</li>
+        <li>Carrot</li>
+        <li>Spinach</li>
+      </ul>
+    </li>
+  </ul>
+
+  <!-- Audio for toggle click -->
+  <audio id="clickSound" src="https://www.soundjay.com/button/sounds/button-16.mp3" preload="auto"></audio>
+
+  <script>
+    const clickSound = document.getElementById('clickSound');
+    const allToggles = document.querySelectorAll('.collapsible > span');
+
+    function closeAllExcept(current) {
+      document.querySelectorAll('.collapsible.open').forEach(el => {
+        if (el !== current) {
+          el.classList.remove('open');
+          localStorage.removeItem(el.dataset.id);
+        }
+      });
+    }
+
+    allToggles.forEach(span => {
+      span.addEventListener('click', () => {
+        const parentLi = span.parentElement;
+
+        // Play sound
+        clickSound.currentTime = 0;
+        clickSound.play();
+
+        const id = parentLi.dataset.id;
+
+        // Accordion behavior
+        if (!parentLi.classList.contains('open')) {
+          closeAllExcept(parentLi);
+          parentLi.classList.add('open');
+          if (id) localStorage.setItem(id, 'open');
+        } else {
+          parentLi.classList.remove('open');
+          if (id) localStorage.removeItem(id);
+        }
+      });
+    });
+
+    // Restore previous open states
+    window.addEventListener('DOMContentLoaded', () => {
+      document.querySelectorAll('.collapsible').forEach(li => {
+        const id = li.dataset.id;
+        if (id && localStorage.getItem(id) === 'open') {
+          li.classList.add('open');
+        }
+      });
+    });
+  </script>
+
+</body>
+</html>

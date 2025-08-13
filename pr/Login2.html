@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        body {
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: antiquewhite;
+        }
+
+        .box {
+            width: 280px;
+            padding: 20px 30px;
+            background-color: aquamarine;
+            box-shadow: 10px 10px 10px #aaa, -10px 10px 10px #aaa;
+        }
+
+        .box h2 {
+            text-align: center;
+            margin-bottom: 25px;
+
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        input[type="text"],
+        input[type="password"] {
+            padding: 8px;
+            margin-bottom: 15px;
+            width: 100%;
+            border: 1px solid #aaa;
+        }
+
+        button {
+            width: 100%;
+            padding: 8px;
+            background-color: rgb(114, 114, 235);
+            border: none;
+            margin-bottom: 10px;
+        }
+
+        .footer {
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="box">
+        <h2>Login</h2>
+        <form>
+            <label>Username</label>
+            <input type="text" name="username" />
+
+            <label>Password</label>
+            <input type="text" name="password" />
+
+            <button>Login</button>
+        </form>
+
+        <div class="footer">
+            New User?<a href="Register">Register</a>
+        </div>
+    </div>
+</body>
+
+</html>
